@@ -1,0 +1,100 @@
+2024-11-12 12:24:35 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 12:24:35 INFO  org.example.Options - Bucket 3: usu-cs5250-perat-dist3
+2024-11-12 12:24:35 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 12:24:35 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat-dist2
+2024-11-12 12:24:35 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 12:26:44 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 12:26:44 INFO  org.example.Options - Bucket 3: usu-cs5250-perat-dist3
+2024-11-12 12:26:44 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 12:26:44 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat-dist2
+2024-11-12 12:26:44 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 12:39:27 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 12:39:27 INFO  org.example.Options - Bucket 3: usu-cs5250-perat-dist3
+2024-11-12 12:39:27 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 12:39:27 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat-dist2
+2024-11-12 12:39:27 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 12:39:29 ERROR org.example.Options - An error occurred while running the services: 
+software.amazon.awssdk.services.sqs.model.QueueDoesNotExistException: The specified queue does not exist for this wsdl version. (Service: Sqs, Status Code: 400, Request ID: b837dcb8-8b2a-5b16-9264-83153a1b8e47)
+	at software.amazon.awssdk.core.internal.http.CombinedResponseHandler.handleErrorResponse(CombinedResponseHandler.java:125)
+	at software.amazon.awssdk.core.internal.http.CombinedResponseHandler.handleResponse(CombinedResponseHandler.java:82)
+	at software.amazon.awssdk.core.internal.http.CombinedResponseHandler.handle(CombinedResponseHandler.java:60)
+	at software.amazon.awssdk.core.internal.http.CombinedResponseHandler.handle(CombinedResponseHandler.java:41)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.HandleResponseStage.execute(HandleResponseStage.java:30)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:72)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptTimeoutTrackingStage.execute(ApiCallAttemptTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:78)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.TimeoutExceptionHandlingStage.execute(TimeoutExceptionHandlingStage.java:40)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:52)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallAttemptMetricCollectionStage.execute(ApiCallAttemptMetricCollectionStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:81)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.RetryableStage.execute(RetryableStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:56)
+	at software.amazon.awssdk.core.internal.http.StreamManagingStage.execute(StreamManagingStage.java:36)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.executeWithTimer(ApiCallTimeoutTrackingStage.java:80)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:60)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallTimeoutTrackingStage.execute(ApiCallTimeoutTrackingStage.java:42)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:48)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ApiCallMetricCollectionStage.execute(ApiCallMetricCollectionStage.java:31)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.RequestPipelineBuilder$ComposingRequestPipelineStage.execute(RequestPipelineBuilder.java:206)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:37)
+	at software.amazon.awssdk.core.internal.http.pipeline.stages.ExecutionFailureExceptionReportingStage.execute(ExecutionFailureExceptionReportingStage.java:26)
+	at software.amazon.awssdk.core.internal.http.AmazonSyncHttpClient$RequestExecutionBuilderImpl.execute(AmazonSyncHttpClient.java:193)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.invoke(BaseSyncClientHandler.java:103)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.doExecute(BaseSyncClientHandler.java:171)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.lambda$execute$1(BaseSyncClientHandler.java:82)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.measureApiCallSuccess(BaseSyncClientHandler.java:179)
+	at software.amazon.awssdk.core.internal.handler.BaseSyncClientHandler.execute(BaseSyncClientHandler.java:76)
+	at software.amazon.awssdk.core.client.handler.SdkSyncClientHandler.execute(SdkSyncClientHandler.java:45)
+	at software.amazon.awssdk.awscore.client.handler.AwsSyncClientHandler.execute(AwsSyncClientHandler.java:56)
+	at software.amazon.awssdk.services.sqs.DefaultSqsClient.getQueueUrl(DefaultSqsClient.java:894)
+	at software.amazon.awssdk.services.sqs.SqsClient.getQueueUrl(SqsClient.java:1321)
+	at org.example.SimpleQueueService.<init>(SimpleQueueService.java:19)
+	at org.example.Options.run(Options.java:82)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2026)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at org.example.Main.main(Main.java:7)
+2024-11-12 12:44:18 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 12:44:18 INFO  org.example.Options - Bucket 3: usu-cs5250-perat-dist3
+2024-11-12 12:44:18 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 12:44:18 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat-dist2
+2024-11-12 12:44:18 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 21:26:51 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 21:26:51 INFO  org.example.Options - Bucket 3: usu-cs5250-perat-dist3
+2024-11-12 21:26:51 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 21:26:51 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat-dist2
+2024-11-12 21:26:51 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 21:29:03 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 21:29:03 INFO  org.example.Options - Bucket 3: usu-cs5250-perat3-dist
+2024-11-12 21:29:03 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 21:29:03 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat2-dist
+2024-11-12 21:29:03 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 21:30:06 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 21:30:06 INFO  org.example.Options - Bucket 3: usu-cs5250-perat3-dist
+2024-11-12 21:30:06 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 21:30:06 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat2-dist
+2024-11-12 21:30:06 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 21:30:14 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 21:30:14 INFO  org.example.Options - Bucket 3: usu-cs5250-perat3-dist
+2024-11-12 21:30:14 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 21:30:14 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat2-dist
+2024-11-12 21:30:15 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 21:36:05 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 21:36:05 INFO  org.example.Options - Bucket 3: usu-cs5250-perat3-dist
+2024-11-12 21:36:05 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 21:36:05 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat2-dist
+2024-11-12 21:36:05 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
+2024-11-12 21:36:06 INFO  org.example.Options - Starting application with the following options:
+2024-11-12 21:36:06 INFO  org.example.Options - Bucket 3: usu-cs5250-perat3-dist
+2024-11-12 21:36:06 INFO  org.example.Options - DynamoDB Table: null
+2024-11-12 21:36:06 INFO  org.example.Options - Bucket 2 (required): usu-cs5250-perat2-dist
+2024-11-12 21:36:06 INFO  org.example.Options - Sqs: https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests
