@@ -62,10 +62,10 @@ public class Consumer {
                     processCreateRequest(widget);
                     break;
                 case UPDATE:
-                    System.out.println("Haven't implemented Update");
+                    proccessUpdateRequest(widget);
                     break;
                 case DELETE:
-                    System.out.println("Haven't implemented Delete");
+                    processDeleteRequest(widget);
                     break;
                 default:
                     System.err.println("Unknown request type");
@@ -91,10 +91,24 @@ public class Consumer {
     private void proccessUpdateRequest(Widget widget) {
         try {
             if (this.options.getBucket3() != null) {
-
+                this.s3Service.updateWidgetInS3(this.options.getBucket3(), widget);
+            } else if (this.options.getDynamoDBTable() != null) {
+                this.dynamoDBService.updateWidgetInDynamoDB(this.options.getDynamoDBTable(), widget);
             }
         } catch (Exception ex) {
+            System.err.println("Failed to process update request: " + widget.getWidgetId() + " Error: " + ex.getMessage());
+        }
+    }
 
+    private void processDeleteRequest(Widget widget) {
+        try {
+            if (this.options.getBucket3() != null) {
+                this.s3Service.deleteWidgetInS3(this.options.getBucket3(), widget);
+            } else if (this.options.getDynamoDBTable() != null) {
+                this.dynamoDBService.deleteWidgetInDynamoDB(this.options.getDynamoDBTable(), widget);
+            }
+        } catch (Exception ex) {
+            System.err.println("Failed to process delete request: " + widget.getWidgetId() + " Error " + ex.getMessage());
         }
     }
 }
