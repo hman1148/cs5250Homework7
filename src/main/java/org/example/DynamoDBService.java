@@ -6,6 +6,7 @@ import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
+import software.amazon.awssdk.services.dynamodb.model.DeleteItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 
@@ -85,6 +86,26 @@ public class DynamoDBService {
             System.out.println("Widget updated successfully in DynamoDB: " + widget.getWidgetId());
         } catch (Exception ex) {
             System.err.println("Failed to update widget: " + widget.getWidgetId());
+        }
+    }
+
+    public void deleteWidgetInDynamoDB(String tablename, Widget widget) {
+        try {
+            //Define the primary key of the item to remove
+            Map<String, AttributeValue> key = new HashMap<>();
+            key.put("widgetId", AttributeValue.builder().s(widget.getWidgetId()).build());
+
+            // Make Delete Request
+            DeleteItemRequest deleteItemRequest = DeleteItemRequest.builder()
+                    .tableName(tablename)
+                    .key(key)
+                    .build();
+
+            this.dynamoDbClient.deleteItem(deleteItemRequest);
+            System.out.println("Widget with ID: " + widget.getWidgetId() + " deleted successfully");
+
+        } catch (Exception ex) {
+            System.err.println("Failed to delete widget: " + widget.getWidgetId());
         }
     }
 
