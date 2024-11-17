@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.*;
 
@@ -17,7 +18,9 @@ public class S3Service {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public S3Service() {
-        s3Client = S3Client.builder().build();
+        s3Client = S3Client.builder()
+                .region(Region.US_EAST_1)
+                .build();
     }
 
     public String readWidgetRequestsFromBucket(String bucket) {
@@ -97,7 +100,25 @@ public class S3Service {
             this.s3Client.putObject(request, RequestBody.fromString(widgetJson));
             System.out.println("Successfully updated widget in S3: " + widget.getWidgetId());
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.err.println("Error for update request: " + e.getMessage());
+        }
+    }
+
+    public void deleteWidgetInS3(String bucket, Widget widget) {
+        try {
+            String widgetJson = this.objectMapper.writeValueAsString(widget);
+
+            String objectKey = "widgets/" + widget.getWidgetId() + ".json";
+
+            DeleteObjectRequest request = DeleteObjectRequest.builder()
+                    .bucket(bucket)
+                    .key(objectKey)
+                    .build();
+            this.s3Client.deleteObject(request);
+            System.out.println("Successfully deleted widget in S3: " + widget.getWidgetId());
+
+        } catch (Exception ex) {
+            System.err.println("Error occured for delete request: " + ex.getMessage());
         }
     }
 

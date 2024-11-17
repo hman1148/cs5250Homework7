@@ -109,6 +109,7 @@ public class Widget {
     public void setOtherAttributes(List<SubAttributes> otherAttributes) {
         this.otherAttributes = otherAttributes;
     }
+
     public static class SubAttributes {
         @JsonProperty("name")
         private String name;
