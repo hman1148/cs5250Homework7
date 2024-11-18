@@ -17,5 +17,5 @@ WORKDIR /app
 # Copy the application JAR File to the container image
 COPY build/libs/Homework7-1.0-all.jar Homework7-1.0-all.jar
 
-CMD ["java", "-jar", "Homework7-1.0-all.jar", "--bucket2", "usu-cs5250-perat2-dist", "--bucket3", "usu-cs5250-perat3-dist", "--sqs", "https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests"]
+CMD ["java", "-jar", "Homework7-1.0-all.jar", "--bucket2", "usu-cs5250-perat2-dist", "--bucket3", "usu-cs5250-perat3-dist", "--sqs", "https://sqs.us-east-1.amazonaws.com/224193139309/cs5250-requests", "--dynamodb-table", "widgets"]
 
